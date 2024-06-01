@@ -10,3 +10,6 @@
 /.config
 /.gitconfig
 /.hushlogin
+.keras
+results
+text_classification_model
