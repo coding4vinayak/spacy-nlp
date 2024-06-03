@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text Comprehend</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  #output {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 100px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 2em; /* Adjust font size as needed */
+    margin-top: 50px; /* Adjust top margin as needed */
+  }
+  textarea, button {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 10px;
+    margin-right: 10px; /* Add spacing between input boxes and buttons */
+  }
+</style>
+</head>
+<body>
+
+<h1>Text Comprehension</h1>
+
+<textarea id="inputText" rows="6" cols="60" placeholder="Enter text here..."></textarea>
+
+<!-- Input box for text similarity, inline with the first input box -->
+<textarea id="inputText2" rows="5" cols="50" placeholder="Enter text for similarity..."></textarea>
+<button onclick="analyze('similarity')">Text Similarity</button><br>
+
+<button onclick="analyze('classification')">Classification</button>
+<button onclick="analyze('entity')">Entity</button>
+<button onclick="analyze('sentiment')">Sentiment</button>
+<button onclick="analyze('language')">Language</button>
+<button onclick="analyze('keyphrase')">key phrase</button>
+
+<div id="output"></div>
+
+<script>
+  function analyze(task) {
+    if (task === 'similarity') {
+      var text1 = document.getElementById("inputText").value;
+      var text2 = document.getElementById("inputText2").value;
+      // Perform text similarity analysis
+      // For demonstration, let's just display the input texts
+      var output = "Text 1: " + text1 + "<br>";
+      output += "Text 2: " + text2 + "<br>";
+      output += "Similarity Result: "; // Add similarity result here
+      // For demonstration, let's assume similarity is calculated and displayed here
+      var similarityScore = Math.random(); // Generate a random similarity score for demonstration
+      output += similarityScore.toFixed(2); // Display similarity score with two decimal places
+      document.getElementById("output").innerHTML = output;
+    } else {
+      var text = document.getElementById("inputText").value;
+      // Perform analysis based on the task (e.g., classification, entity recognition)
+      // Add your analysis logic here
+      // For demonstration, let's just display the task name and the input text
+      var output = "Task: " + task + "<br>";
+      output += "Text: " + text;
+      document.getElementById("output").innerHTML = output;
+    }
+  }
+
+  function submitText() {
+    var text = document.getElementById("inputText").value;
+    // Submit the text or perform any other action
+    // For demonstration, let's just display the submitted text
+    document.getElementById("output").innerHTML = "Submitted Text: " + text;
+  }
+</script>
+
+<!-- Add the "connect with vinayak" button wrapped in an anchor tag -->
+<a href="https://vinayakss.vercel.app/contact.html">
+  <button>Connect with Vinayak</button>
+</a>
+
+</body>
+</html>
+
+
